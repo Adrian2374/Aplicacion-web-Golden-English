@@ -1,0 +1,40 @@
+.about{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .about-1-content{
+        width: 90.85%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .about-1-content-1{
+            width: 70%;
+            border-radius: 10px;
+            padding: 20px;
+            // background-color: ;
+            // box-shadow: 5px 5px 10px white;
+            // margin: 20px 0px;
+
+            h2{
+                text-align: center;
+                color: #cedebd;
+            }
+
+            hr{
+                height: 2px;
+                width: 90%;
+            }
+
+            p{
+                margin: 10px 0px;
+                font-size: 20px;
+                color: #cedebd;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.form-registry {
+  display: flex;
+  justify-content: center;
+}
+.form-registry form {
+  width: 90.85%;
+}
+.form-registry form label {
+  color: white;
+}
+.form-registry form button {
+  border: 1px solid #1b1b1b;
+  color: #1b1b1b;
+  background: white;
+  border-radius: 3px;
+  padding: 5px 0px;
+  margin: 5px;
+  width: 200px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+.form-registry form .text-log {
+  display: block;
+  margin-bottom: 10px;
+  display: block;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=style_registry.css.map */

@@ -1,0 +1,36 @@
+.form-registry{
+    display: flex;
+    justify-content: center;
+
+    form{
+        width: 90.85%;
+
+        label{
+            color: white;
+        }
+
+        button{
+            border: 1px solid rgb(27, 27, 27);
+            color: rgb(27, 27, 27);
+            background: white;
+            border-radius: 3px;
+            padding: 5px 0px;
+            margin: 5px;
+            width: 200px;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+
+        .text-log{
+            display: block;
+            margin-bottom: 10px;
+            display: block;
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: 10px;
+        }
+    }
+}
+
+  

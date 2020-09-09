@@ -1,0 +1,32 @@
+.contacts{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h2{
+        color: #cedebd;
+    }
+    table{
+        margin-top: 30px;
+        tr{
+            td{
+                padding: 30px 50px;
+                text-align: center;
+
+                a{
+                    img{
+                        width: 70px;
+                    }   
+                }
+
+                p{
+                    font-size: 20px;
+                    color: #cedebd;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

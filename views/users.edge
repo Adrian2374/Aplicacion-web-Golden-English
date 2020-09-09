@@ -1,0 +1,62 @@
+@layout('layouts.app')
+@section('content')
+    <div id="details">
+            <div>
+                <label for=""><b>Id:</b></label>
+                <label for="">{{usuario._id}}</label>
+            </div>
+            <div>
+                <label for=""><b>Nombre:</b></label>
+                <label for="">{{usuario.name}}</label>
+            </div>
+            <div>
+                <label for=""><b>Apellido:</b></label>
+                <label for="">{{usuario.lastName}}</label>
+            </div>
+            <div>
+                <label for=""><b>Correo:</b></label>
+                <label for="">{{usuario.email}}</label>
+            </div>
+            <div>
+                <label for=""><b>Contraseña:</b></label>
+                <label for="">{{usuario.password}}</label>
+            </div>
+            <div>
+                <label for=""><b>Telefono:</b></label>
+                <label for="">{{usuario.phone}}</label>
+            </div>
+            <div>
+                <label for=""><b>Creado en:</b></label>
+                <label for="">{{usuario.createdAt}}</label>
+            </div>
+    </div>
+    <div class="table-users margin-all">
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Creado en</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @each(usuario in usuarios)
+                        <tr>
+                            <td><b>{{usuario._id}}</b></td>
+                            <td>{{usuario.name}}</td>
+                            <td>{{usuario.lastName}}</td>
+                            <td>{{usuario.createdAt}}</td>
+                            <td>
+                                <a href="/users/detalles/{{usuario._id}}" onclick="userDetails()">Detalles</a>
+                                <a href="/users/editar/{{usuario._id}}">Editar</a>
+                                <a href="/users/borrar/{{usuario._id}}">Borrar</a>
+                            </td>
+                        </tr>
+                    @endeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+@endsection

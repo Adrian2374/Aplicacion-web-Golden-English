@@ -1,0 +1,63 @@
+.table-users {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.table-users .table {
+  overflow: auto;
+  width: 90.85%;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+.table-users .table table {
+  width: auto;
+  height: auto;
+  background-color: white;
+  text-align: left;
+  border-radius: 5px;
+  padding: 10px;
+}
+.table-users .table table thead tr th {
+  padding: 0px 10px;
+}
+.table-users .table table tbody tr {
+  padding: 10px 0px;
+}
+.table-users .table table tbody tr:focus {
+  background-color: blue;
+}
+.table-users .table table tbody tr td {
+  padding: 0px 10px 20px 10px;
+}
+.table-users .table table tbody tr td a {
+  color: white;
+  padding: 3px 7px;
+  background-color: blue;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.table-users .table table tbody tr td a:first-child {
+  background-color: green;
+}
+.table-users .table table tbody tr td a:last-child {
+  background-color: red;
+}
+
+#details {
+  width: 500px;
+  height: 500px;
+  position: fixed;
+  background-color: whitesmoke;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  border-radius: 5px;
+  border: 1px solid black;
+  display: none;
+  padding: 20px;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style_users.css.map */

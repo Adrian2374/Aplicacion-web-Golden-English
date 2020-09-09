@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden English</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="imagenes/descarga.png">
+</head>
+<body>
+    <div id="log">
+        <form for="login" action="/iniciar" method="POST">
+            <div class="data-in-log">
+                <label for="usuario" class="salto">Usuario</label>
+                <input type="email" name="email" id="usuario" class="salto text-log" placeholder="Escriba usuario" required>
+                <p style="font-size: 15px; color:rgb(211, 60, 60); margin: 0px; display: none;">Correo no valido!!</p>
+                <label for="contraseña" class="salto">Contraseña</label>
+                <input type="password" name="password" id="contraseña" class="salto text-log" placeholder="Escriba contraseña" required>
+            </div>
+            <button href="iniciar" class="btn-inicio" id="login">Iniciar Sesion</button>
+            <a href="registro" class="btn-registro">Registrarse</a>
+        </form>
+    </div>
+    <header>
+        <div class="encabezado">
+            <div class="img-logo">
+                <a href="/"><img src="imagenes/logo-01.webp" alt=""></a>
+            </div>
+            <nav>
+                <div class="btn-menu">
+                    <p><a href="#" onclick="menuResponsive()">Menú</a></p>
+                </div>
+                <ul class="menu">
+                    <!-- <li><a href="#">Inicio</a></li> -->
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Temario</a></li>
+                    <li><a href="#" onclick="formulario()" id="btn-login">Ingresar</a></li>
+                    <!-- <li><a href="#"><img src="imagenes/inicio-sesion.png" alt="iniciar-sesion"></a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="menu-desp">
+        <!-- <section class="menu-desp-ani desaparece-menu"></section> -->
+        <ul class="desaparece-lista lista"> 
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Temario</a></li>
+            <li><a href="#" onclick="formulario()">Ingresar</a></li>
+        </ul>
+    </div>
+    <div class="banner">
+        <div class="banner-img">
+            <div class="img img-in img-out"><img src="imagenes/img-banner1.png" alt="img-banner1"></div>
+            <div class="img img-in img-out"><img src="imagenes/imagen-banner2.png" alt="imagen-banner2"></div>
+            <div class="img img-in img-out"><img src="imagenes/imagen-banner3.png" alt="imagen-banner3"></div>
+            <div class="img img-in img-out"><img src="imagenes/imagen-banner4.jpg" alt="imagen-banner4"></div>
+            <div class="img img-in img-out"><img src="imagenes/imagen-banner5.jpg" alt="imagen-banner5"></div>
+            <!-- <div class="carrusel"></div> -->
+        </div>
+    </div>
+    <div class="block-1">
+        <div class="block-1-title"> 
+            <h1>Conocenos</h1>
+            <!-- <span></span> -->
+        </div>
+        <div class="block-1-content">
+            <div class="block-1-content-1">
+                <h2>Mision</h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius cupiditate accusamus consectetur voluptatem quis, cum, fugiat iusto facere totam possimus quas libero, quae nam veritatis eum architecto officiis earum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit et laudantium minima, consectetur rem fuga doloribus ullam architecto fugiat perferendis, quo iste deleniti iusto! Quod odio hic inventore nisi voluptatem.</p>
+            </div>
+            <div class="block-1-content-1">
+                <h2>Objetivos</h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium id eveniet, esse nobis vitae reprehenderit, at exercitationem quibusdam praesentium et est, fuga enim! Voluptate expedita illum nihil iste, eligendi ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nisi inventore delectus aspernatur eum amet expedita quam voluptatum? Porro consequuntur fuga tempora provident sapiente odio exercitationem illum temporibus consequatur est?</p>
+            </div>
+        </div>
+
+    </div>
+    <script src="dynamic/main.js"></script>
+</body>
+</html>

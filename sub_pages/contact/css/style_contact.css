@@ -1,0 +1,39 @@
+.contacts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contacts h2 {
+  color: #cedebd;
+}
+.contacts table {
+  margin-top: 30px;
+}
+.contacts table tr td {
+  padding: 30px 50px;
+  text-align: center;
+}
+.contacts table tr td a img {
+  width: 70px;
+}
+.contacts table tr td p {
+  font-size: 20px;
+  color: #cedebd;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .contacts table tr td {
+    padding: 20px;
+  }
+  .contacts table tr td img {
+    width: 50px;
+  }
+  .contacts table tr td p {
+    font-size: 15px;
+  }
+}
+
+/*# sourceMappingURL=style_contact.css.map */

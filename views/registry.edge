@@ -1,0 +1,25 @@
+@layout('layouts.app')
+@section('content')
+
+    <div class="form-registry margin-all">
+        <form action="/registro/guardar" method="POST">
+            <label for="nombre" class="salto">Nombre</label>
+            <input id="nombre" name="name" class="salto text-log" placeholder="Escriba nombre" required>
+
+            <label for="apellidos" class="salto">Apellidos</label>
+            <input id="apellidos" name="lastName" class="salto text-log" placeholder="Escriba apellido" required>
+
+            <label for="email" class="salto">Correo electrónico</label>
+            <input id="email" name="email" class="salto text-log" placeholder="Escriba email" required>
+
+            <label for="telefono" class="salto">Telefono</label>
+            <input id="telefono" name="phone" class="salto text-log" placeholder="Escriba telefono" onkeypress="return onlyNumbers(event)" maxlength="10" required>
+
+            <label for="password" class="salto">Contraseña</label>
+            <input type="password" name="password" id="password" class="salto text-log" placeholder="Escriba contraseña" required>
+
+            <button >Registrarse</button>
+        </form>
+    </div>
+
+@endsection

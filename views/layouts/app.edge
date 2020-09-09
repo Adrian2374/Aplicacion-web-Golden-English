@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden English</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="sub_pages/registry/css/style_registry.css">
+    <link rel="stylesheet" href="sub_pages/contact/css/style_contact.css">
+    <link rel="stylesheet" href="sub_pages/about/css/style_about.css">
+    <link rel="stylesheet" href="sub_pages/users/css/style_users.css">
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="imagenes/descarga.png">
+</head>
+<body onload="userLogin()">
+    <div id="log">
+        <div class="close">
+            <a id="close-window-log" onclick="closeWindow()">Cancelar</a>
+        </div>
+        <form for="login" action="/iniciar" method="POST">
+            <img src="imagenes/trabajador.png" alt="Login">
+            <div class="data-in-log">
+                {{--  <label for="usuario" class="salto">Usuario</label>  --}}
+                <input type="email" name="email" id="usuario" class="salto text-log" placeholder="Escriba usuario" style="text-indent:17px;" required>
+                
+                {{--  <label for="contraseña" class="salto">Contraseña</label>  --}}
+                <input type="password" name="password" id="contraseña" class="salto text-log" placeholder="Escriba contraseña" style="text-indent:17px;" required>
+                
+            </div>
+            <button href="iniciar" class="btn-inicio" id="login">Iniciar Sesion</button>
+            <a href="registro" class="btn-registro">Registrarse</a>
+        </form>
+    </div>
+    <header>
+        <div class="encabezado">
+            <div class="encabezado-1">
+                <div class="img-logo">
+                    <a href="/"><img src="imagenes/logo-01.webp" alt=""></a>
+                    <h1 id="frase">Bienvenidos a Golden English</h1>
+                </div>
+                <nav>
+                    <div class="btn-menu">
+                        <a onclick="menuResponsive()"><img src="imagenes/menu.png" alt=""></a>
+                    </div>
+                    <ul class="menu">
+                        <!-- <li><a href="#">Inicio</a></li> -->
+                        <li><a href="about">Nosotros</a></li>
+                        <li><a href="contacto">Contacto</a></li>
+                        <li><a href="users">Temario</a></li>
+                        <li><a onclick="formulario()">Ingresar</a></li>
+                        <!-- <li><a href="#"><img src="imagenes/inicio-sesion.png" alt="iniciar-sesion"></a></li> -->
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu-desp">
+                <!-- <section class="menu-desp-ani desaparece-menu"></section> -->
+                <ul class="desaparece-lista lista"> 
+                    <li><a href="about">Nosotros</a></li>
+                    <li><a href="contacto">Contacto</a></li>
+                    <li><a href="users">Temario</a></li>
+                    <li><a onclick="formulario()">Ingresar</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    @!section('content')
+
+    <script src="dynamic/main.js"></script>
+</body>
+</html>

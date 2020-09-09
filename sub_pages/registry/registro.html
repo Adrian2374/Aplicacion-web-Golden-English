@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | Golden English</title>
+    <link rel="stylesheet" href="/sub_pages/registry/css/style_registry.css">
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="imagenes/descarga.png">
+</head>
+<body>
+    <div id="log">
+        <form for="login" action="/iniciar" method="POST">
+            <div class="data-in-log">
+                <label for="usuario" class="salto">Usuario</label>
+                <input type="email" name="email" id="usuario" class="salto text-log" placeholder="Escriba usuario" required>
+                <p style="font-size: 15px; color:rgb(211, 60, 60); margin: 0px; display: none;">Correo no valido!!</p>
+                <label for="contraseña" class="salto">Contraseña</label>
+                <input type="password" name="password" id="contraseña" class="salto text-log" placeholder="Escriba contraseña" required>
+            </div>
+            <button href="iniciar" class="btn-inicio" id="login">Iniciar Sesion</button>
+            <a href="registro" class="btn-registro">Registrarse</a>
+        </form>
+    </div>
+    <header>
+        <div class="encabezado">
+            <div class="img-logo">
+                <a href="/"><img src="imagenes/logo-01.webp" alt=""></a>
+            </div>
+            <nav>
+                <div class="btn-menu">
+                    <p><a href="#" onclick="menuResponsive()">Menú</a></p>
+                </div>
+                <ul class="menu">
+                    <!-- <li><a href="#">Inicio</a></li> -->
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Temario</a></li>
+                    <li><a href="#" onclick="formulario()">Ingresar</a></li>
+                    <!-- <li><a href="#"><img src="imagenes/inicio-sesion.png" alt="iniciar-sesion"></a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="menu-desp">
+        <!-- <section class="menu-desp-ani desaparece-menu"></section> -->
+        <ul class="desaparece-lista lista"> 
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Temario</a></li>
+            <li><a href="#" onclick="formulario()">Ingresar</a></li>
+        </ul>
+    </div>
+    <div class="form-registry">
+        <form action="/registro/guardar" method="POST">
+            <label for="nombre" class="salto">Nombre</label>
+            <input id="nombre" name="name" class="salto text-log" placeholder="Escriba nombre" required>
+
+            <label for="apellidos" class="salto">Apellidos</label>
+            <input id="apellidos" name="lastName" class="salto text-log" placeholder="Escriba apellido" required>
+
+            <label for="email" class="salto">Correo electrónico</label>
+            <input id="email" name="email" class="salto text-log" placeholder="Escriba email" required>
+
+            <label for="telefono" class="salto">Telefono</label>
+            <input id="telefono" name="phone" class="salto text-log" placeholder="Escriba telefono" required>
+
+            <label for="password" class="salto">Contraseña</label>
+            <input type="password" name="password" id="password" class="salto text-log" placeholder="Escriba contraseña" required>
+
+            <button >Registrarse</button>
+        </form>
+    </div>
+    <script src="dynamic/main.js"></script>
+</body>
+</html>
