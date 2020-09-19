@@ -12,12 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="imagenes/descarga.png">
 </head>
-<body onload="userLogin()">
+<body onload="userLogin('{{token}}')()">
     <div id="log">
         <div class="close">
             <a id="close-window-log" onclick="closeWindow()">Cancelar</a>
         </div>
-        <form for="login" action="/iniciar" method="POST">
+        <form for="login" action="/autenticar" method="POST">
             <img src="imagenes/trabajador.png" alt="Login">
             <div class="data-in-log">
                 {{--  <label for="usuario" class="salto">Usuario</label>  --}}

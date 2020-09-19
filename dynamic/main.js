@@ -63,9 +63,28 @@ function onlyNumbers(e){
     }
 }
 
-function userLogin(){
-    console.log(window.location)
+function userLogin(token){
+    if(token === undefined){
+        return console.log('No se ha logueado');
+    }else{
+        // console.log(token)
+        localStorage.setItem('userToken', JSON.stringify({token: token})); 
+        // var currentUser = JSON.parse(localStorage.getItem('currentUser')); 
+        // var token = currentUser.token; // your token 
+
+        // return function() {
+        //     const header = new Headers();
+        //     header.append('access-token', 'Bearer ' + JSON.parse(localStorage.getItem('userToken')).token)
+        //     // console.log(JSON.parse(localStorage.getItem('userToken')).token)
+        //     document.headers = header
+        //     // console.log(JSON.parse(localStorage.getItem('userToken')))
+        //     localStorage.clear()
+        // }
+        
+    }
 }
+
+
 
 // document.addEventListener("click", (e) => {
 //     let div = document.getElementById('log');

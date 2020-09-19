@@ -2,14 +2,18 @@ const path = require("path")
 const express = require("express")
 const {config, engine} = require("express-edge")
 const app = new express()
+const rutasProtegidas = express.Router()
 const mongoose = require("mongoose")
 const Usuario = require("./database/model/usuario")
+const conf = require("./configs/config")
+const jwt = require("jsonwebtoken")
 mongoose.connect("mongodb://localhost/Golden_2")
 
 const bodyParser = require("body-parser")
 
 app.use(engine)
 app.set('views', `${__dirname}/views`)
+app.set('llave', conf.llave)
 
 app.use('/css',express.static(__dirname +'/css'));
 app.use('/dynamic', express.static(__dirname+'/dynamic'))
@@ -20,6 +24,26 @@ app.use('/sub_pages/about/css',express.static(__dirname +'/sub_pages/about/css')
 app.use('/sub_pages/users/css',express.static(__dirname +'/sub_pages/users/css'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
+
+rutasProtegidas.use((req, res, next) => {
+    const token = req.headers['access-token'];
+ 
+    if (token) {
+      jwt.verify(token, app.get('llave'), (err, decoded) => {      
+        if (err) {
+          return res.status(403).json({ mensaje: 'Token inválida' });    
+        } else {
+          req.decoded = decoded;    
+          next();
+        }
+      });
+    } else {
+      res.send({ 
+          mensaje: 'No te has autenticado.' 
+      });
+    }
+ });
+
 
 app.get("/", (req, res) => {
     // res.sendFile(path.resolve(__dirname, "main.html"))
@@ -40,14 +64,14 @@ app.get("/about", (req, res) => {
     res.render("about")
 })
 
-app.get("/users", async (req, res) => {
+app.get("/users", rutasProtegidas, async (req, res) => {
     const usuarios = await Usuario.find({})
     res.render("users", {
         usuarios
     })
 })
 
-app.post("/iniciar", (req, res) => {
+app.post("/autenticar", (req, res) => {
     // console.log(req.body.email)
     // console.log(req.body.password)
     Usuario.findOne({
@@ -63,19 +87,21 @@ app.post("/iniciar", (req, res) => {
                 console.log("La contraseña es incorrecta");
                 return res.render("main");
             }
-            console.log("Usuario existe");
+            else{
+                const payload = {
+                    check: true,
+                    name: us.name,
+                    lastName: us.lastName
+                };
+                const token = jwt.sign(payload, app.get('llave'), {
+                    expiresIn: 5
+                });
+                // console.log('Autenticación correcta')
+                res.render("main", {
+                    token
+                })
+            }
         })
-        
-        // Usuario.findOne({
-        //     email: req.body.email,
-        //     password: req.body.password
-        // }, (err, usuario) => {
-        //     if(usuario === null){
-        //         return console.log("La contraseña esta mal")
-        //     }
-        //     console.log("Usuario existe")
-        //     res.render("main")
-        // }) 
     })
 })
 
