@@ -3,7 +3,7 @@
     <div id="details">
             <div>
                 <label for=""><b>Id:</b></label>
-                <label for="">{{usuario._id}}</label>
+                <label for="">{{usuario.id_user}}</label>
             </div>
             <div>
                 <label for=""><b>Nombre:</b></label>
@@ -25,10 +25,10 @@
                 <label for=""><b>Telefono:</b></label>
                 <label for="">{{usuario.phone}}</label>
             </div>
-            <div>
+            {{--  <div>
                 <label for=""><b>Creado en:</b></label>
                 <label for="">{{usuario.createdAt}}</label>
-            </div>
+            </div>  --}}
     </div>
     <div class="table-users margin-all">
         <div class="table">
@@ -38,20 +38,20 @@
                         <th>#</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Creado en</th>
+                        <th>Telefono</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @each(usuario in usuarios)
+                    @each(usuario in result)
                         <tr>
-                            <td><b>{{usuario._id}}</b></td>
+                            <td><b>{{usuario.id_user}}</b></td>
                             <td>{{usuario.name}}</td>
                             <td>{{usuario.lastName}}</td>
-                            <td>{{usuario.createdAt}}</td>
+                            <td>{{usuario.phone}}</td>
                             <td>
-                                <a href="/users/detalles/{{usuario._id}}" onclick="userDetails()">Detalles</a>
-                                <a href="/users/editar/{{usuario._id}}">Editar</a>
-                                <a href="/users/borrar/{{usuario._id}}">Borrar</a>
+                                <a onclick="userDetails()">Detalles</a>
+                                <a href="/editar/{{usuario.iduser}}">Editar</a>
+                                <a href="/borrar/{{usuario.id_user}}">Borrar</a>
                             </td>
                         </tr>
                     @endeach
@@ -59,4 +59,9 @@
             </table>
         </div>
     </div>
+    <script>
+        function userDetails(){
+            document.getElementById("details").style.display = "flex";
+        }
+    </script>
 @endsection

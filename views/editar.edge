@@ -1,0 +1,25 @@
+@layout('layouts.app')
+@section('content')
+
+    <div class="form-editar margin-all">
+        <form action="/editar" method="POST">
+            <label for="nombre" class="salto">Nombre</label>
+            <input id="nombre" name="name" class="salto text-log" placeholder="Escriba nombre" value="{{result.name}}" required>
+
+            <label for="apellidos" class="salto">Apellidos</label>
+            <input id="apellidos" name="lastName" class="salto text-log" placeholder="Escriba apellido" value="{{result.lastName}}" required>
+
+            <label for="email" class="salto">Correo electrónico</label>
+            <input id="email" name="email" class="salto text-log" placeholder="Escriba email" value="{{result.email}}" required>
+
+            <label for="telefono" class="salto">Telefono</label>
+            <input id="telefono" name="phone" class="salto text-log" placeholder="Escriba telefono" onkeypress="return onlyNumbers(event)" value="{{result.phone}}" maxlength="10" required>
+
+            <label for="password" class="salto">Contraseña</label>
+            <input type="password" name="password" id="password" class="salto text-log" placeholder="Escriba contraseña" value="{{result.password}}" required>
+
+            <button >Editar</button>
+        </form>
+    </div>
+
+@endsection

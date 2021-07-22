@@ -1,0 +1,5 @@
+{
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.deploySubpath": ".",
+    "appService.defaultWebAppToDeploy": "/subscriptions/3a208b92-421a-49ad-b2a7-52875a9d5b2b/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/cloud-project"
+}
